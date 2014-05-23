@@ -114,6 +114,7 @@ def employees_page():
 @http_server.route("/add_working_seconds", methods=['POST'])
 def add_working_seconds():
     try:
+        print request.form.to_dict()
         employee_id = int(request.form.get('employee_id'))
         password = request.form.get('password')
         working_seconds = int(request.form.get('working_seconds'))
@@ -121,3 +122,4 @@ def add_working_seconds():
     except Exception, e:
         print traceback.format_exc()
         print e
+        return str(e)
