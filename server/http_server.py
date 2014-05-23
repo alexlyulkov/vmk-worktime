@@ -16,7 +16,7 @@ http_server.debug = True
 
 
 @http_server.route("/")
-@website_authorization.requires_auth
+#@website_authorization.requires_auth
 def index_page():
     try:
         return website.index_page()
